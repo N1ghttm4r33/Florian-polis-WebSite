@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!--=============== FAVICON ===============-->
+      <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+      <!--=============== REMIXICONS ===============-->
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="./css/style.css">
+      <link rel="stylesheet" href="./css/menu.css">
+
+      <title>Florianópolis</title>
+   </head>
+   <body>
+      <!--==================== HEADER ====================-->
+      <header class="header" id="header">
+         <nav class="nav container">
+			<a href="#" class="nav_logo">
+				Florianópolis | 201 DS
+			</a>
+			<div class="nav_menu" id="nav-menu">
+				<ul class="nav_list">
+					<li class="nav_item">
+						<a href="#home" class="nav_link">Home</a>
+					</li>
+
+					<li class="nav_item">
+						<a href="#about" class="nav_link">Sobre</a>
+					</li>
+
+					<li class="nav_item">
+						<a href="#popular" class="nav_link">Locais</a>
+					</li>
+
+				</ul>
+
+			</div>
+
+         <!-- CLose Button -->
+         <div class="nav_close" id="nav-close">
+            <i class="ri-close-line"></i>
+         </div>
+
+         <!-- Toggle Button -->
+         <div class="nav_toggle" id="nav-toggle">
+            <i class="ri-menu-fill"></i>
+         </div>
+
+		 </nav>
+      </header>
+
+      <!--==================== MAIN ====================-->
+      <main class="main">
+         <!--==================== HOME ====================-->
+         <section class="home section" id="home">
+            <img src="./img/florianopolis.jpg" alt="home image" class="home_bg" />
+            <div class="home_shadow"></div>
+
+            <div class="home_container container grid">
+               <div class="home_data">
+                  <h3 class="home_subtitle">
+                     Bem Vindo a essa viagem
+                  </h3>
+
+                  <h1 class="home_titulo"></h1>
+
+                  <h1 class="home_title">
+                     Veja como é <br>
+                     Florianópolis
+                  </h1>
+
+                  <p class="home_description">
+                     Veja em primeira mão como é 
+                     a capital de Santa Catarina sem sair
+                     de casa, pontos turísticos, locais e tudo mais.
+                  </p>
+
+                  <a href="#about" class="button2">
+                     Comece Sua Jornada <i class="ri-arrow-right-line"></i>
+                  </a>
+               </div>
+
+               <div class="home_cards grid">
+                  <article class="home_card">
+                     <img src="./img/mercado_publico.jpg" alt="home image" class="home_card-img">
+                     <h3 class="home_card-title">Mercado Público</h3>
+                     <div class="home_card-shadow"></div>
+                  </article>
+
+                  <article class="home_card">
+                     <img src="./img/catedral.jpg" alt="home image" class="home_card-img">
+                     <h3 class="home_card-title">Catedral</h3>
+                     <div class="home_card-shadow"></div>
+                  </article>
+
+                  <article class="home_card">
+                     <img src="./img/museu.jpg" alt="home image" class="home_card-img">
+                     <h3 class="home_card-title">Museu</h3>
+                     <div class="home_card-shadow"></div>
+                  </article>
+
+                  <article class="home_card">
+                     <img src="./img/praia_armacao.jpg" alt="home image" class="home_card-img">
+                     <h3 class="home_card-title">Praia da Armação</h3>
+                     <div class="home_card-shadow"></div>
+                  </article>
+               </div>
+            </div>
+         </section>
+
+         <!--==================== ABOUT ====================-->
+         <section class="about section" id="about">
+            <div class="about_container container grid">
+               <div class="about_data">
+                  <h2 class="section_title">
+                     Ver mais <br>
+                     Sobre a Viagem
+                  </h2>
+
+                  <p class="about_description">
+                     A viagem à capital de Santa Catarina foi motivada pelo projeto intitulado 
+							"Diversidade Histórico-Cultural e Desenvolvimento Regional de Santa Catarina".
+							 Esse projeto visava explorar e compreender um pouco sobre a historia de Cruz e
+							  Souza e também a exploração e compreensão da cultura e do desenvolvimento da 
+							  região de Florianópolis em específico. Ao vivenciar pessoalmente o ambiente, 
+							  pudemos coletar informações valiosas para enriquecer o nosso estudo, obtendo 
+							  assim uma compreensão mais aprofundada das diversas influências que moldaram 
+							  a identidade e o progresso local.
+                  </p>
+
+                  <a href="#Slider" class="button2">
+                     Explorar a Viagem <i class="ri-arrow-right-line"></i>
+                  </a>
+               </div>
+
+               <div class="about_image">
+                  <img src="./img/casa_literaturajpg.jpg" alt="about image" class="about_img">
+                  <div class="about_shadow"></div>
+               </div>
+            </div>
+         </section>
+
+         <!--==================== POPULAR ====================-->
+     
+         <div class="popular">
+      
+               <div class="slide">
+      
+                  
+                  <div class="item" style="background-image: url(./img/florianopolis.jpg);">
+                     <div class="content">
+                           <div class="name">Florianópolis</div>
+                           <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                           <form action="./pages/florianopolis.html">
+                              <button>Ver Mais</button>
+                           </form>
+                     </div>
+                  </div>
+                  <div class="item" style="background-image: url(./img/casa_literaturajpg.jpg);">
+                     <div class="content">
+                           <div class="name">Casa da Literatura</div>
+                           <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                           <form action="./pages/casa_literatura.html">
+                              <button>Ver Mais</button>
+                           </form>
+                     </div>
+                  </div>
+                  <div class="item" style="background-image: url(./img/museu.jpg);">
+                     <div class="content">
+                           <div class="name">Museu</div>
+                           <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                           <form action="./pages/museu.html">
+                              <button>Ver Mais</button>
+                           </form>
+                     </div>
+                  </div>
+                  <div class="item" style="background-image: url(./img/catedral.jpg);">
+                     <div class="content">
+                           <div class="name">Catedral</div>
+                           <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                           <form action="./pages/catedral.html">
+                              <button>Ver Mais</button>
+                           </form>
+                     </div>
+                  </div>
+                  <div class="item" style="background-image: url(./img/mercado_publico.jpg);">
+                     <div class="content">
+                           <div class="name">Mercado Público</div>
+                           <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                           <form action="./pages/mercado_publico.html">
+                              <button>Ver Mais</button>
+                           </form>
+                     </div>
+                  </div>
+                  <div class="item" style="background-image: url(./img/praia_armacao.jpg);">
+                     <div class="content">
+                           <div class="name">Praia da Armação</div>
+                           <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                           <form action="./pages/praia.html">
+                              <button>Ver Mais</button>
+                           </form>
+                     </div>
+                  </div>
+      
+               </div>
+      
+               <div class="button">
+                  <button class="prev"><i class="ri-arrow-left-line"></i></button>
+                  <button class="next"><i class="ri-arrow-right-line"></i></button>
+               </div>
+      
+         </div>
+         
+      </main>
+
+      <!--==================== FOOTER ====================-->
+      <footer class="footer">
+         <p>&copy: 2023 turma <strong>2&deg;1 Desenvolvimento de Sistemas.</strong> Todos os direitos reservados</p>
+      </footer>
+
+      <!--=============== SCROLLREVEAL ===============-->
+      <script src="./js/scrollreveal.min.js"></script>
+
+      <!--=============== MAIN JS ===============-->
+      <script src="./js/index.js"></script>
+
+   </body>
+</html>
