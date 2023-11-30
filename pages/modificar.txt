@@ -1,0 +1,25 @@
+pagina florianopolis
+
+modificar imagem inicial e remover as imagens de baixo
+
+botar uma nav bar com algumas coisas nela
+
+umas 3 imagens juntas na esquerda e alguma escrita na direita
+
+depois uma foto grande com alguma menssagem
+
+e depois umas 4 imagens com algumas escritas
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+pagina museu
+
+modificar imagem inicial e remover as imagens de baixo
+
+botar uma nav bar com algumas coisas nela
+
+umas 3 imagens juntas na esquerda e alguma escrita na direita
+
+depois uma foto grande com alguma menssagem
+
+e depois umas 4 imagens com algumas escritas
