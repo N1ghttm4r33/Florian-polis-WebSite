@@ -316,6 +316,8 @@ nav{
   width: 1200px;
   height: 600px;
   background: #f5f5f5;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .popular .slide .item{
@@ -494,6 +496,245 @@ nav{
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
+
+@media screen and (max-width: 400px)
+{
+  * {
+    overflow-x: hidden;
+  }
+
+  html {
+    max-width: 410px;
+    overflow-x: hidden;
+
+    body {
+      max-width: 410px;
+      overflow-x: hidden;
+      overflow-y: hidden;
+
+      main {
+        max-width: 410px;
+        overflow-x: hidden;
+        overflow-y: hidden;
+      }
+    }
+  }
+
+  .header{
+    position: fixed;
+    width: 100%;
+    background-color: transparent;
+    top: 0; left: 0;
+    z-index: var(--z-fixed);
+  }
+  
+  nav{
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav_logo{
+    color: var(--title-color);
+    font-family: var(--second-font);
+    font-weight: var(--font-semi-bold);
+  }
+  
+  
+  .nav_toggle{
+    position: absolute;
+    left: 1292px;
+    top: 15px;
+    font-size: 1.25rem;
+    color: var(--title-color);
+    cursor: pointer;
+  }
+  
+  .nav_close{
+    position: absolute;
+    left: 1292px;
+    font-size: 0;
+    color: var(--title-color);
+    cursor: pointer;
+  }
+  
+  .nav_list{
+    position: absolute;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+    left: 1330px;
+  }
+  
+  .nav_link{
+    position: relative;
+    color: var(--title-color);
+    font-family: var(--second-font);
+    font-weight: var(--font-medium);
+  }
+  
+  .nav_link::after{
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: var(--title-color);
+    position: absolute;
+    left: 0;
+    bottom: -.5rem;
+    transition: width .3s;
+  }
+  
+  .nav_link:hover::after{
+    width: 70%;
+  }
+  
+  .nav_close{
+    position: absolute;
+    top: 1rem; right: 3rem;
+  }
+  
+  /* Show menu */
+  
+  .show-menu{
+    top: -140px;
+  }
+  
+  .hidden{
+    top: -100%;
+  }
+  
+  .org{
+    font-size: 1.25rem;
+  }
+  
+  /* Add blur to header */
+  
+  .blur-header{
+    top: 0;
+  }
+  
+  .blur-header::after{
+    content: '';
+    position: absolute;
+    width: 1000%;
+    height: 100%;
+    background-color: hsla(0, 0%, 0%, .3);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px); /*for safari*/
+    top: 0; left: 0;
+    z-index: -1;
+  }
+  
+  /* Active link */
+  
+  .active-link::after{
+    width: 70%;
+  }
+
+  .home {
+    overflow-y: hidden;
+  }
+
+  .home_cards {
+    max-width: 410px;
+    margin-left: -25px;
+    display: flex;
+    grid-template-columns: 30px;
+
+    .home_card{
+      min-width: 80px;
+      max-width: 80px;
+      min-height: 80px;
+      max-height: 80px;
+      margin: 0 auto;
+      left: -83px;
+      .home_card-img{
+        max-width: 100px;
+        max-height: 100px;
+      }
+    }
+  }
+
+  .home_card-shadow{
+    position: absolute;
+    max-width: 100px;
+    height: 100px;
+    top: 0px; left: 0;
+    background: linear-gradient(180deg,
+                hsla(0, 0%, 0%, 0) 50%,
+                hsl(0, 0%, 0%) 125%
+    );
+  }
+
+  .about_container {
+    grid-template-columns: 1fr; /* Adjusted grid for single column */
+    gap: 1rem; /* Adjusted gap */
+    left: -10px; /* Adjusted position */
+    width: 79%;
+    overflow-y: hidden;
+    overflow-x: hidden; 
+  }
+
+  .about_image {
+    left: -10px;
+    top: 30px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+
+  .popular {
+    width: 72%;
+    height: 50%;
+    left: 161px;
+    top: 850px;
+
+    .slide .item:nth-child(3){
+      left: 100%;
+      overflow-y: hidden;
+      overflow-x: hidden;
+    }
+    .slide .item:nth-child(4){
+      left: calc(50% + 220px);
+      overflow-y: hidden;
+      overflow-x: hidden;
+    }
+    .slide .item:nth-child(5){
+      left: calc(50% + 440px);
+      overflow-y: hidden;
+      overflow-x: hidden;
+    }
+    
+    /* here n = 0, 1, 2, 3,... */
+    .slide .item:nth-child(n + 6){
+      left: calc(50% + 660px);
+      opacity: 0;
+      overflow-y: hidden;
+      overflow-x: hidden;
+    }
+    
+    .content {
+      color: transparent;
+  
+      left: 108px;
+      
+      .name{
+        color: #f5f5f5;
+      }
+    .des {
+      color: transparent;
+    }
+    }
+  }
+
+  footer {
+    background-color: transparent;
+    p {
+      color: transparent;
+    }
+  }
+}
 
 
 /* For medium devices */
