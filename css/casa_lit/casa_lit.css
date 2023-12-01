@@ -1,73 +1,74 @@
 /*=============== HEADER & NAV ===============*/
-.header{
-	position: fixed;
-	width: 100%;
-	background-color: transparent;
-	top: 0; left: 0;
-	z-index: var(--z-fixed);
+.header {
+  position: fixed;
+  width: 600px; /* Adjusted width to 600px */
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
 }
 
-nav{
-	height: var(--header-height);
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.nav_logo{
-	color: var(--title-color);
-	font-family: var(--second-font);
-	font-weight: var(--font-semi-bold);
+.nav_logo {
+  color: var(--title-color);
+  font-family: var(--second-font);
+  font-weight: var(--font-semi-bold);
 }
 
-
-.nav_toggle{
+.nav_toggle {
   position: absolute;
   left: 1292px;
   top: 15px;
-	font-size: 1.25rem;
-	color: var(--title-color);
-	cursor: pointer;
+  font-size: 1.25rem;
+  color: var(--title-color);
+  cursor: pointer;
 }
 
-.nav_close{
+.nav_close {
   position: absolute;
   left: 1292px;
-	font-size: 0;
-	color: var(--title-color);
-	cursor: pointer;
+  font-size: 0;
+  color: var(--title-color);
+  cursor: pointer;
 }
 
+
 /* Navigation for mobile devices */
-@media screen and (max-width: 1500px){
-	.nav_menu{
-		position: fixed;
-		top: -100%;
-		background-color: hsla(0, 0%, 0%, .3);
-    height: 400px;
-		width: 110%;
-    right: 0px;
-		padding-block: 10rem;
-		backdrop-filter: blur(3px);
-		-webkit-backdrop-filter: blur(3px); /*for safari*/
-		transition: top .4s;
-	}
+@media screen and (max-width: 1510px){
+  .nav_menu{
+      position: fixed;
+      top: -100%;
+      background-color: hsla(0, 0%, 0%, .3);
+  height: 400px;
+      width: 110%;
+  right: 0px;
+      padding-block: 10rem;
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px); /*for safari*/
+      transition: top .4s;
+  }
 }
 
 .nav_list{
-	position: absolute;
-	text-align: center;
-	display: flex;
-	flex-direction: column;
-	row-gap: 2.5rem;
+  position: absolute;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
   left: 1330px;
 }
 
 .nav_link{
   position: relative;
-	color: var(--title-color);
-	font-family: var(--second-font);
-	font-weight: var(--font-medium);
+  color: var(--title-color);
+  font-family: var(--second-font);
+  font-weight: var(--font-medium);
 }
 
 .nav_link::after{
@@ -86,8 +87,8 @@ nav{
 }
 
 .nav_close{
-	position: absolute;
-	top: 1rem; right: 3rem;
+  position: absolute;
+  top: 1rem; right: 3rem;
 }
 
 /* Show menu */
@@ -305,14 +306,14 @@ nav{
 
 @keyframes animate {
   from {
-    opacity: 0;
-    transform: translate(0, 100px);
-    filter: blur(33px);
+  opacity: 0;
+  transform: translate(0, 100px);
+  filter: blur(33px);
   }
   to {
-    opacity: 1;
-    transform: translate(0);
-    filter: blur(0);
+  opacity: 1;
+  transform: translate(0);
+  filter: blur(0);
   }
 }
 .button_popular {
@@ -379,21 +380,6 @@ nav{
   border-radius: .5rem;
   background-color: hsl(0, 0%, 30%);
 }
-
-/*=============== SCROLL UP ===============*/
-
-
-/* Show Scroll Up */
-
-
-/*=============== BREAKPOINTS ===============*/
-/* For small devices */
-
-
-/* For medium devices */
-
-
-/* For large devices */
 
 /*------------------------------------Parte casa da literatura-------------------------------*/ 
 
@@ -474,67 +460,198 @@ nav{
   transition: .5s ease-in-out;
 }
 
+/*---------------------------------------------------------1750px-----------------------------------------------------------------*/
+
 @media screen and (max-width: 1750px){
+
   .casa_da_literatura {
-    /*parte dos pagragrafos...*/
-    margin: 20px;
+  /*parte dos pagragrafos...*/
+  margin: 20px;
+  margin-bottom: 30px;
   }
   
   .maps{
-    /*parte dos pagragrafos...*/
-    margin-top:50px;
-    margin: 20px;
-    align-items: center;
-    position: absolute;
-    left: 350px;
+  /*parte dos pagragrafos...*/
+  margin-top:50px;
+  margin: 20px;
+  align-items: center;
+  position: absolute;
+  left: 350px;
   }
   
   /* Estilos para o contêiner da galeria */
   .gallery-container {
-    display: flex; /* Layout flexível para os itens */
-    flex-wrap: wrap; /* Quebra para a próxima linha se não couberem na largura */
-    justify-content: space-evenly; /* Distribuição uniforme dos itens */
-    gap: 2vw; /* Espaçamento entre os itens em porcentagem da largura da viewport */
-    padding: 0 1vw; /* Preenchimento zero na vertical, 1% da largura da viewport na horizontal */
+  display: flex; /* Layout flexível para os itens */
+  flex-wrap: wrap; /* Quebra para a próxima linha se não couberem na largura */
+  justify-content: space-evenly; /* Distribuição uniforme dos itens */
+  gap: 2vw; /* Espaçamento entre os itens em porcentagem da largura da viewport */
+  padding: 0 1vw; /* Preenchimento zero na vertical, 1% da largura da viewport na horizontal */
   }
   
   /* Estilos para cada item da galeria */
   .gallery-items {
-    width: 300px; /* Largura fixa */
-    height: 250px; /* Altura fixa */
-    border: 10px solid #fff; /* Borda sólida branca */
-    box-shadow: 5px 5px 5px #0006; /* Sombra com deslocamento, desfoque e cor semi-transparente */
-    flex-grow: 1; /* Preenche o espaço disponível no contêiner */
-    transition: transform 1s linear; /* Transição suave de 1 segundo na propriedade de transformação (escala) */
+  width: 300px; /* Largura fixa */
+  height: 250px; /* Altura fixa */
+  border: 10px solid #fff; /* Borda sólida branca */
+  box-shadow: 5px 5px 5px #0006; /* Sombra com deslocamento, desfoque e cor semi-transparente */
+  flex-grow: 1; /* Preenche o espaço disponível no contêiner */
+  transition: transform 1s linear; /* Transição suave de 1 segundo na propriedade de transformação (escala) */
   }
   
   /* Estilos para a imagem dentro de cada item da galeria */
   .gallery-items img {
-    width: 100%; /* Ocupa 100% da largura do contêiner pai */
-    height: 100%; /* Ocupa 100% da altura do contêiner pai */
-    object-fit: cover; /* Mantém proporções e cobre completamente o contêiner */
+  width: 100%; /* Ocupa 100% da largura do contêiner pai */
+  height: 100%; /* Ocupa 100% da altura do contêiner pai */
+  object-fit: cover; /* Mantém proporções e cobre completamente o contêiner */
   }
   
   /* Efeito de zoom suave quando o cursor está sobre um item da galeria */
   .gallery-items:hover {
-    transform: scale(1.4); /* Aumenta a escala para criar um efeito de zoom */
+  transform: scale(1.4); /* Aumenta a escala para criar um efeito de zoom */
   }
   
   .navbar{
-    width: 130%;
-    height: 100px;
-    right: unset;
+  width: 117%;
+  height: 100px;
+  right: unset;
+  position: relative;
+  background-color: rgb(75, 74, 74);
+  border-radius: 30px;
+  display: flex;
+  gap: 18px;
+  margin: 0 auto;
+  }
+  
+  .navbar button{
+  position: relative;
+  top: 25px;
+  border-radius: 30px;
+  max-height: 45px;
+  max-width: 350px;
+  border: 2px solid rgb(4, 117, 117);
+  border-radius: 30px;
+  background-color: rgb(54, 52, 52);
+  color: var(--title-color);
+  padding: 10px 20px;
+  margin: 0 auto;
+  }
+  
+  .navbar button:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+  transition: .5s ease-in-out;
+  }
+}
+
+/*----------------------------------------------------------------600px----------------------------------------------------------------------------*/
+
+@media screen and (max-width: 600px) {
+
+  .nav_logo {
+  color: var(--title-color);
+  font-family: var(--second-font);
+  font-weight: var(--font-semi-bold);
+  margin-left: auto; /* Adiciona margem à esquerda automática para empurrar para o lado direito */
+  }
+  
+  /* Mova o botão de navegação (nav_toggle) para o lado esquerdo */
+  .nav_toggle {
+      left: 10px;
+      top: 15px;
+  }
+
+  /* Mova o botão de fechar navegação (nav_close) para o lado direito */
+  .nav_close {
+      right: 10px;
+      top: 15px;
+  }
+
+  /* Ajuste a posição da lista de navegação (nav_list) para dispositivos móveis */
+  .nav_list {
+      left: auto;
+      text-align: center;
+  }
+
+  /* Adicione algum preenchimento (padding) ao lado direito da lista de navegação (nav_list) */
+  .nav_list {
+    padding-right: 20px;
+  }
+
+
+  .nav_link {
+    font-size: 1rem; /* Ajuste o tamanho da fonte */
+  }
+
+  .home_bg,
+  .home_shadow {
+    height: 300px; /* Ajuste a altura da seção Home para dispositivos móveis */
+  }
+
+  .home_title {
+    font-size: 2rem; /* Ajuste o tamanho do título para dispositivos móveis */
+  }
+
+  .home_description {
+    font-size: 1rem; /* Ajuste o tamanho da descrição para dispositivos móveis */
+  }
+
+  .home_card {
+    min-width: 100%; /* Faça os cards ocuparem a largura total */
+  }
+
+  .gallery-items {
+    width: 100%; /* Faça os itens da galeria ocuparem a largura total */
+    height: 150px; /* Ajuste a altura dos itens da galeria para dispositivos móveis */
+  }
+
+  .footer {
+    bottom: 0; /* Fixe o rodapé na parte inferior da tela */
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    padding: 10px; /* Adicione um preenchimento para melhor visualização */
+  }
+
+  .footer > p {
+    margin: 0; /* Remova margens padrão do parágrafo */
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    width: 100%;
+    overflow-x: hidden; /* Pode ser útil para evitar overflow horizontal */
+  }
+
+  .maps {
+    margin: 0 auto; /* Define margens superior e inferior como 0 e centraliza horizontalmente */
+    position: relative; /* Alterado para relativo para posicionar conforme o contêiner pai */
+    left: 50%; /* Mantido para posicionar inicialmente no meio da tela */
+    transform: translateX(-50%); /* Ajuste para centralizar completamente o elemento */
+  }
+
+  .navbar {
+    width: 100%; /* Alterado para 100% para preencher a largura da tela */
+    height: auto; /* Altura ajustada automaticamente conforme o conteúdo */
     position: relative;
     background-color: rgb(75, 74, 74);
     border-radius: 30px;
     display: flex;
+    flex-direction: column; /* Ajustado para empilhar os itens verticalmente */
+    align-items: center; /* Centraliza os itens na horizontal */
     gap: 18px;
     margin: 0 auto;
+    padding: 10px; /* Adiciona um preenchimento para melhor visualização */
   }
-  
-  .navbar button{
+
+  .navbar button {
     position: relative;
-    top: 25px;
+    top: 0; /* Removido o ajuste de posição superior */
     border-radius: 30px;
     max-height: 45px;
     max-width: 350px;
@@ -545,10 +662,275 @@ nav{
     padding: 10px 20px;
     margin: 0 auto;
   }
-  
-  .navbar button:hover{
+
+  .navbar button:hover {
     transform: scale(1.1);
     cursor: pointer;
     transition: .5s ease-in-out;
+  }
+
+  .casa_da_literatura_p{
+    margin: 0px;
+  }
+}
+
+/*----------------------------------------------------1200px----------------------------------------------------------------------*/
+
+@media screen and (max-width: 1200px) {
+
+  .nav_logo {
+    color: var(--title-color);
+    font-family: var(--second-font);
+    font-weight: var(--font-semi-bold);
+    margin-left: auto; /* Adiciona margem à esquerda automática para empurrar para o lado direito */
+  }
+
+  .nav_toggle {
+    /* Seus estilos ajustados para a largura até 1200px */
+    left: 10px;
+    top: 15px;
+  }
+
+  .nav_close {
+    /* Seus estilos ajustados para a largura até 1200px */
+    right: 10px;
+    top: 15px;
+  }
+
+  .nav_list {
+    /* Ajuste a posição da lista de navegação (nav_list) para dispositivos até 1200px */
+    left: auto;
+    text-align: center;
+    padding-right: 20px;
+  }
+
+
+  .nav_link {
+    font-size: 1rem; /* Ajuste o tamanho da fonte */
+  }
+
+  .home_bg,
+  .home_shadow {
+    height: 300px; /* Ajuste a altura da seção Home para dispositivos móveis */
+  }
+
+  .home_title {
+    font-size: 2rem; /* Ajuste o tamanho do título para dispositivos móveis */
+  }
+
+  .home_description {
+    font-size: 1rem; /* Ajuste o tamanho da descrição para dispositivos móveis */
+  }
+
+  .home_card {
+    min-width: 100%; /* Faça os cards ocuparem a largura total */
+  }
+
+  .gallery-items {
+    width: 100%; /* Faça os itens da galeria ocuparem a largura total */
+    height: 150px; /* Ajuste a altura dos itens da galeria para dispositivos móveis */
+  }
+
+  .footer {
+    bottom: 0; /* Fixe o rodapé na parte inferior da tela */
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    padding: 10px; /* Adicione um preenchimento para melhor visualização */
+  }
+
+  .footer > p {
+    margin: 0; /* Remova margens padrão do parágrafo */
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    width: 100%;
+    overflow-x: hidden; /* Pode ser útil para evitar overflow horizontal */
+  }
+
+  .maps {
+    margin: 0 auto; /* Define margens superior e inferior como 0 e centraliza horizontalmente */
+    position: relative; /* Alterado para relativo para posicionar conforme o contêiner pai */
+    left: 50%; /* Mantido para posicionar inicialmente no meio da tela */
+    transform: translateX(-50%); /* Ajuste para centralizar completamente o elemento */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 100% da altura da viewport */
+  }
+
+  .navbar {
+    width: 100%; /* Alterado para 100% para preencher a largura da tela */
+    height: auto; /* Altura ajustada automaticamente conforme o conteúdo */
+    position: relative;
+    background-color: rgb(75, 74, 74);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column; /* Ajustado para empilhar os itens verticalmente */
+    align-items: center; /* Centraliza os itens na horizontal */
+    gap: 18px;
+    margin: 0 auto;
+    padding: 10px; /* Adiciona um preenchimento para melhor visualização */
+  }
+
+  .navbar button {
+    position: relative;
+    top: 0; /* Removido o ajuste de posição superior */
+    border-radius: 30px;
+    max-height: 45px;
+    max-width: 350px;
+    border: 2px solid rgb(4, 117, 117);
+    border-radius: 30px;
+    background-color: rgb(54, 52, 52);
+    color: var(--title-color);
+    padding: 10px 20px;
+    margin: 0 auto;
+  }
+
+  .navbar button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: .5s ease-in-out;
+  }
+
+  .casa_da_literatura_p{
+    margin: 0px;
+  }
+}
+
+/*--------------------------------------------------------1750px--------------------------------------------------------------------------*/
+
+@media screen and (max-width: 1200px) {
+
+  .nav_logo {
+    color: var(--title-color);
+    font-family: var(--second-font);
+    font-weight: var(--font-semi-bold);
+    margin-left: auto; /* Adiciona margem à esquerda automática para empurrar para o lado direito */
+  }
+
+  .nav_toggle {
+    /* Seus estilos ajustados para a largura até 1200px */
+    left: 10px;
+    top: 15px;
+  }
+
+  .nav_close {
+    /* Seus estilos ajustados para a largura até 1200px */
+    right: 10px;
+    top: 15px;
+  }
+
+  .nav_list {
+    /* Ajuste a posição da lista de navegação (nav_list) para dispositivos até 1200px */
+    left: auto;
+    text-align: center;
+    padding-right: 20px;
+  }
+
+
+  .nav_link {
+    font-size: 1rem; /* Ajuste o tamanho da fonte */
+  }
+
+  .home_bg,
+  .home_shadow {
+    height: 300px; /* Ajuste a altura da seção Home para dispositivos móveis */
+  }
+
+  .home_title {
+    font-size: 2rem; /* Ajuste o tamanho do título para dispositivos móveis */
+  }
+
+  .home_description {
+    font-size: 1rem; /* Ajuste o tamanho da descrição para dispositivos móveis */
+  }
+
+  .home_card {
+    min-width: 100%; /* Faça os cards ocuparem a largura total */
+  }
+
+  .gallery-items {
+    width: 100%; /* Faça os itens da galeria ocuparem a largura total */
+    height: 150px; /* Ajuste a altura dos itens da galeria para dispositivos móveis */
+  }
+
+  .footer {
+    bottom: 0;
+    position: relative;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .footer > p {
+    margin: 0; /* Remova margens padrão do parágrafo */
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    width: 100%;
+    overflow-x: hidden; /* Pode ser útil para evitar overflow horizontal */
+  }
+
+  .maps {
+    /* Seus estilos ajustados para até 1750px */
+    margin: 0 auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .navbar {
+    width: 100%; /* Alterado para 100% para preencher a largura da tela */
+    height: auto; /* Altura ajustada automaticamente conforme o conteúdo */
+    position: relative;
+    background-color: rgb(75, 74, 74);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column; /* Ajustado para empilhar os itens verticalmente */
+    align-items: center; /* Centraliza os itens na horizontal */
+    gap: 18px;
+    margin: 0 auto;
+    padding: 10px; /* Adiciona um preenchimento para melhor visualização */
+  }
+
+  .navbar button {
+    position: relative;
+    top: 0; /* Removido o ajuste de posição superior */
+    border-radius: 30px;
+    max-height: 45px;
+    max-width: 350px;
+    border: 2px solid rgb(4, 117, 117);
+    border-radius: 30px;
+    background-color: rgb(54, 52, 52);
+    color: var(--title-color);
+    padding: 10px 20px;
+    margin: 0 auto;
+  }
+
+  .navbar button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: .5s ease-in-out;
+  }
+
+  .casa_da_literatura_p{
+    margin: 0px;
   }
 }
