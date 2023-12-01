@@ -497,6 +497,22 @@ nav{
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 
+@media screen and (max-width: 1630px){
+
+}
+
+@media screen and (max-width: 1510px){
+
+}
+
+@media screen and (max-width: 768px){
+
+}
+
+@media screen and (max-width: 430px){
+
+}
+
 @media screen and (max-width: 400px)
 {
   * {
