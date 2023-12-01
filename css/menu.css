@@ -501,23 +501,13 @@ nav{
 {
   * {
     overflow-x: hidden;
+    overflow-y: hidden;
   }
 
   html {
     max-width: 410px;
     overflow-x: hidden;
-
-    body {
-      max-width: 410px;
-      overflow-x: hidden;
-      overflow-y: hidden;
-
-      main {
-        max-width: 410px;
-        overflow-x: hidden;
-        overflow-y: hidden;
-      }
-    }
+    overflow-y: scroll;
   }
 
   .header{
@@ -649,7 +639,7 @@ nav{
       min-height: 80px;
       max-height: 80px;
       margin: 0 auto;
-      left: -83px;
+      left: -50px;
       .home_card-img{
         max-width: 100px;
         max-height: 100px;
@@ -678,7 +668,7 @@ nav{
   }
 
   .about_image {
-    left: -10px;
+    left: 25px;
     top: 30px;
     overflow-y: hidden;
     overflow-x: hidden;
@@ -687,8 +677,9 @@ nav{
   .popular {
     width: 72%;
     height: 50%;
-    left: 161px;
-    top: 850px;
+    left: 190px;
+    top: 1650px;
+    margin-bottom: 20px;
 
     .slide .item:nth-child(3){
       left: 100%;
