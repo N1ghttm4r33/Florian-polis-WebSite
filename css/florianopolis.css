@@ -711,14 +711,27 @@ video {
     height: auto; /* Make the video responsive */
   }
 
-  .popular h1,
+  .popular {
+    position: relative;
+    top: -200px;
+  }
+
+  .popular h1 {
+    width: 100%; /* Adjusted width */
+    left: 0; /* Adjusted position */
+    text-align: center;
+    margin-left: 0; /* Adjusted margin */
+    font-size: 1.5rem; /* Adjusted font size */
+    top: 450px;
+  }
+
   .paisagem {
     width: 100%; /* Adjusted width */
     left: 0; /* Adjusted position */
     text-align: center;
     margin-left: 0; /* Adjusted margin */
     font-size: 1.5rem; /* Adjusted font size */
-    margin-bottom: -90px;
+    top: -90px;
   }
 
   .about_container {
@@ -735,6 +748,15 @@ video {
     height: auto; /* Make images responsive */
   }
 
+  .gallery {
+    top: auto;
+  }
+
+  .heading {
+    position: absolute;
+    text-align: center;
+  }
+
   .map {
     position: relative;
     top: auto; /* Adjusted for mobile */
@@ -742,6 +764,13 @@ video {
     left: 0; /* Adjusted for mobile */
     text-align: center;
     margin-top: 10rem; /* Adjusted margin */
+  }
+
+  .footer {
+    position: relative;
+    height: 60px;
+    top: auto;
+    text-align: center;
   }
 
   .footer p {
