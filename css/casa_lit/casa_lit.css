@@ -19,23 +19,24 @@ nav {
   color: var(--title-color);
   font-family: var(--second-font);
   font-weight: var(--font-semi-bold);
+  position: absolute;
 }
 
-.nav_toggle {
+.nav_toggle{
   position: absolute;
-  left: 1292px;
+  margin-left: 1292px;
   top: 15px;
-  font-size: 1.25rem;
-  color: var(--title-color);
-  cursor: pointer;
+	font-size: 1.25rem;
+	color: var(--title-color);
+	cursor: pointer;
 }
 
-.nav_close {
+.nav_close{
   position: absolute;
-  left: 1292px;
-  font-size: 0;
-  color: var(--title-color);
-  cursor: pointer;
+  left: 1302.3px;
+	font-size: 0;
+	color: var(--title-color);
+	cursor: pointer;
 }
 
 
@@ -45,9 +46,9 @@ nav {
       position: fixed;
       top: -100%;
       background-color: hsla(0, 0%, 0%, .3);
-  height: 400px;
+      height: 400px;
       width: 110%;
-  right: 0px;
+      right: 0px;
       padding-block: 10rem;
       backdrop-filter: blur(3px);
       -webkit-backdrop-filter: blur(3px); /*for safari*/
@@ -86,11 +87,6 @@ nav {
   width: 70%;
 }
 
-.nav_close{
-  position: absolute;
-  top: 1rem; right: 3rem;
-}
-
 /* Show menu */
 
 .show-menu{
@@ -98,7 +94,7 @@ nav {
 }
 
 .hidden{
-  top: -100%;
+  margin-top: -100%;
 }
 
 .org{
@@ -807,7 +803,7 @@ nav {
 
 /*--------------------------------------------------------1750px--------------------------------------------------------------------------*/
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1750px) {
 
   .nav_logo {
     color: var(--title-color);
@@ -857,10 +853,35 @@ nav {
     min-width: 100%; /* Faça os cards ocuparem a largura total */
   }
 
-  .gallery-items {
-    width: 100%; /* Faça os itens da galeria ocuparem a largura total */
-    height: 150px; /* Ajuste a altura dos itens da galeria para dispositivos móveis */
-  }
+  .gallery-container {
+    display: flex; /* Layout flexível para os itens */
+    flex-wrap: wrap; /* Quebra para a próxima linha se não couberem na largura */
+    justify-content: space-evenly; /* Distribuição uniforme dos itens */
+    gap: 2vw; /* Espaçamento entre os itens em porcentagem da largura da viewport */
+    padding: 0 1vw; /* Preenchimento zero na vertical, 1% da largura da viewport na horizontal */
+    }
+    
+    /* Estilos para cada item da galeria */
+    .gallery-items {
+    width: 300px; /* Largura fixa */
+    height: 250px; /* Altura fixa */
+    border: 10px solid #fff; /* Borda sólida branca */
+    box-shadow: 5px 5px 5px #0006; /* Sombra com deslocamento, desfoque e cor semi-transparente */
+    flex-grow: 1; /* Preenche o espaço disponível no contêiner */
+    transition: transform 1s linear; /* Transição suave de 1 segundo na propriedade de transformação (escala) */
+    }
+    
+    /* Estilos para a imagem dentro de cada item da galeria */
+    .gallery-items img {
+    width: 100%; /* Ocupa 100% da largura do contêiner pai */
+    height: 100%; /* Ocupa 100% da altura do contêiner pai */
+    object-fit: cover; /* Mantém proporções e cobre completamente o contêiner */
+    }
+    
+    /* Efeito de zoom suave quando o cursor está sobre um item da galeria */
+    .gallery-items:hover {
+    transform: scale(1.4); /* Aumenta a escala para criar um efeito de zoom */
+    }
 
   .footer {
     bottom: 0;
