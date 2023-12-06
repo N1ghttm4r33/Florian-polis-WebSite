@@ -1,114 +1,446 @@
 <!DOCTYPE html>
-   <html lang="pt-br">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
 
-      <!--=============== FAVICON ===============-->
-      <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <!--=============== REMIXICONS ===============-->
-      <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
 
-      <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="../css/casa_lit/casa_lit.css">
-      <link rel="stylesheet" href="../css/casa_lit/menu.css">
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
 
-      <title>Casa da Literatura</title>
-   </head>
-   <body>
-      <!--==================== HEADER ====================-->
-      <header class="header" id="header">
-         <nav class="nav container">
-			<a href="#" class="nav_logo">
-				Mercado Público de Florianópolis | 2&deg;1 DS
-			</a>
+    <title>Casa da Literatura</title>
 
-			<div class="nav_menu" id="nav-menu">
-				<ul class="nav_list">
-					<li class="nav_item">
-						<a href="#home" class="nav_link">Home</a>
-					</li>
+    <style>
+        /*=============== HEADER & NAV ===============*/
+        .header {
+            position: fixed;
+            margin-top: 20px;
+            width: 100%;
+            /* Alterado para 100% para cobrir a largura total */
+            background-color: transparent;
+            top: 0;
+            left: 0;
+            z-index: var(--z-fixed);
+        }
 
-					<li class="nav_item">
-						<a href="#about" class="nav_link">Sobre</a>
-					</li>
+        nav {
+            height: var(--header-height);
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            /* Adicionado padding para melhor espaçamento */
+        }
 
-					<li class="nav_item">
-						<a href="#popular" class="nav_link">Locais</a>
-					</li>
+        .nav_logo {
+            color: var(--title-color);
+            font-family: var(--second-font);
+            font-weight: var(--font-semi-bold);
+        }
 
-				</ul>
+        .nav_toggle,
+        .nav_close {
+            font-size: 1.25rem;
+            color: var(--title-color);
+            cursor: pointer;
+        }
 
-			</div>
+        .nav_menu {
+            display: flex;
+            align-items: center;
+        }
 
-         <!-- CLose Button -->
-         <div class="nav_close" id="nav-close">
-            <i class="ri-close-line"></i>
-         </div>
+        .nav_list {
+            list-style: none;
+            display: flex;
+            margin: 0;
+        }
 
-         <!-- Toggle Button -->
-         <div class="nav_toggle" id="nav-toggle">
-            <i class="ri-menu-fill"></i>
-         </div>
+        .nav_item {
+            margin: 0 15px;
+            /* Adicionado espaçamento entre os itens do menu */
+        }
 
-		 </nav>
-      </header>
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 75px;
+            margin-bottom: 20px;
+            margin-left: 20px;
+            /* Adicionada margem à esquerda */
+            margin-right: 20px;
+            /* Adicionada margem à direita */
+            /* Restante do seu código permanece inalterado */
+        }
 
-      <!--==================== MAIN ====================-->
-      <main class="main">
-         <!--==================== HOME ====================-->
-         <section class="home section" id="home">
-            <img src="https://static.ndmais.com.br/2022/09/casa-da-literatura-catarinense.jpeg" alt="home image" class="home_bg" />
+        /* Restante do seu código permanece inalterado */
+
+
+        .gallery-items {
+            display: block;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-items img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-items:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Adicionado estilo para a legenda da imagem */
+        .gallery-items:before {
+            content: "\e931";
+            font-family: "RemixIcons";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            color: #fff;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .gallery-items:hover:before {
+            opacity: 1;
+        }
+
+        .maps {
+            max-width: 600px;
+            /* Defina o tamanho máximo desejado */
+            margin: 0 auto;
+            /* Centralizar a div */
+            padding: 20px;
+            /* Adicionada margem interna para espaçamento interno */
+            box-sizing: border-box;
+            /* Garante que a largura máxima inclua a margem interna */
+        }
+
+        iframe {
+            width: 100%;
+            /* Ajusta a largura para ocupar 100% da div */
+            height: 450px;
+            /* Altura fixa ou ajuste conforme necessário */
+        }
+
+        .home {
+            position: relative;
+        }
+
+        .home_bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 750px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .home_shadow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 800px;
+            background: linear-gradient(180deg,
+                    hsla(0, 0%, 0%, 0) 58%,
+                    hsl(0, 0%, 0%) 78%);
+        }
+
+        .home_container {
+            position: relative;
+            padding-top: 3rem;
+            row-gap: 3rem;
+        }
+
+        .home_data {
+            font-size: 24px;
+            color: white;
+            backdrop-filter: blur(2px);
+            background: transparent;
+            padding: 20px;
+            border-radius: 30px;
+        }
+
+        .home_subtitle {
+            font-size: var(--h3-font-size);
+            margin-bottom: .5rem;
+        }
+
+        .home_title {
+            font-size: var(--biggest-font-size);
+            color: #140f0d;
+        }
+
+        .home_description {
+            margin-bottom: 2rem;
+            color: #140f0d;
+        }
+
+        .home_cards {
+            grid-template-columns: 240px;
+            justify-content: hidden;
+            display: flex;
+            cursor: pointer;
+        }
+
+        .home_card {
+            left: 80px;
+            position: relative;
+            overflow: hidden;
+            min-width: 260px;
+            max-width: 260px;
+            min-height: 170px;
+            max-height: 170px;
+        }
+
+        .home_card-img {
+            transition: transfrom .4s;
+            width: 100%;
+            height: 100%;
+        }
+
+        .home_card-shadow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(180deg,
+                    hsla(0, 0%, 0%, 0) 50%,
+                    hsl(0, 0%, 0%) 125%);
+        }
+
+        .home_card-title {
+            position: absolute;
+            left: 1rem;
+            bottom: 1rem;
+            font-size: var(--h3-font-size);
+            z-index: 1;
+        }
+
+        .home_card:hover .home_card-img {
+            transform: scale(1.2);
+            transition: .8s;
+        }
+
+        .casa_da_literatura {
+            margin: 20px;
+        }
+
+        .casa_da_literatura img {
+            float: left;
+            margin-right: 15px;
+            width: 320px;
+        }
+
+        .casa_da_literatura p {
+            margin-bottom: 15px;
+            /* Adiciona um espaço inferior entre os parágrafos */
+        }
+
+
+
+        @media screen and (max-width: 600px) {
+
+            .home_title {
+                font-size: 1.8rem;
+                /* Tamanho de fonte ajustado para telas menores */
+            }
+
+            .home_description {
+                font-size: 1rem;
+                /* Tamanho de fonte ajustado para telas menores, se necessário */
+                /* Você pode ajustar outros estilos conforme necessário para telas menores */
+            }
+
+            .home {
+                height: 63vh;
+                /* Ajusta a altura para ocupar a tela inteira */
+                overflow: hidden;
+                /* Impede que o conteúdo ultrapasse a seção */
+            }
+
+            .home_bg {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                /* Coloca a imagem no fundo, atrás dos outros elementos */
+            }
+
+            .home_shadow {
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+                /* Adiciona uma sombra escura à imagem */
+                z-index: 0;
+                /* Coloca a sombra no mesmo nível da imagem */
+            }
+
+            .home_container {
+                z-index: 1;
+                /* Coloca o conteúdo sobre a imagem e a sombra */
+            }
+
+            .home_data {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: #fff;
+                /* Cor do texto, ajuste conforme necessário */
+            }
+
+            /* Aplica as alterações apenas em telas de até 600px de largura */
+            @media screen and (max-width: 600px) {
+                .home_title {
+                    font-size: 1.8rem;
+                }
+
+                .home_description {
+                    font-size: 1rem;
+                }
+            }
+
+            /* Restante do seu código permanece inalterado */
+
+            .home_title {
+                font-size: 1.8rem;
+            }
+
+            .nav_list {
+                flex-direction: column;
+                align-items: center;
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100vh;
+                background-color: #fff;
+                /* Adapte a cor de fundo conforme necessário */
+                transition: 0.3s;
+            }
+
+            .nav_list.active {
+                left: 0;
+            }
+
+            .nav_item {
+                margin: 10px 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+
+        <nav class="nav container">
+
+            <a href="#" class="nav_logo">
+                Florianópolis | 2&deg01 DS
+            </a>
+
+            <div class="nav_menu" id="nav-menu">
+
+                <ul class="nav_list">
+
+                    <li class="nav_item">
+                        <a href="#home" class="nav_link">Home</a>
+                    </li>
+
+                    <li class="nav_item">
+                        <a href="#about" class="nav_link">Sobre</a>
+                    </li>
+
+                    <li class="nav_item">
+                        <a href="#popular" class="nav_link">Locais</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- CLose Button -->
+            <div class="nav_close" id="nav-close">
+                <i class="ri-close-line"></i>
+            </div>
+
+            <!-- Toggle Button -->
+            <div class="nav_toggle" id="nav-toggle">
+                <i class="ri-menu-fill"></i>
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+        <!--==================== HOME ====================-->
+        <section class="home section" id="home">
+            <img src="https://static.ndmais.com.br/2022/09/casa-da-literatura-catarinense.jpeg" alt="home image"
+                class="home_bg" />
             <div class="home_shadow"></div>
 
             <div class="home_container container grid">
 
-               <div class="home_data">
+                <div class="home_data">
 
-                  <h1 class="home_title">
-                     Veja como é o <br>
-                     Mercado Público de Florianópolis
-                  </h1>
-
-                  <p class="home_description">
-                     A Casa da Literatura em Florianópolis é um espaço dedicado 
-                     à celebração das letras e das artes, promovendo eventos culturais e 
-                     encontros literários.
-                  </p>
-
-               </div>
+                    <h1 class="home_title">
+                       Veja como é o <br>
+                       Mercado Público de Florianópolis
+                    </h1>
+  
+                    <p class="home_description">
+                       O Mercado Público de Florianópolis é um dos principais pontos turísticos da cidade. 
+                       Conheça o maior ponto de encontro da ilha de Santa Catarina.
+                    </p>
+  
+                 </div>
 
             </div>
 
-         </section>
+        </section>
 
-         <!--==================== ABOUT ====================-->
+        <!--==================== ABOUT ====================-->
 
-         <section>
+        <section>
             
-            <div class="casa_da_literatura" style="margin-top: 26%;">
+            <div class="casa_da_literatura" style="margin-top: 14%;">
 
                <p>
-                  Localizada no coração cultural da ilha da magia, a Casa da Literatura é um verdadeiro tesouro para os amantes da poesia 
-                  e da história catarinense. Este espaço magnífico celebra e preserva o legado do renomado poeta simbolista brasileiro, 
-                  Cruz e Sousa, que nasceu em Florianópolis e deixou um profundo impacto na literatura nacional.
+                  O Mercado Público de Florianópolis é um ponto turístico 
+                  de destaque, considerado um patrimônio artístico, histórico e especial na Ilha de Santa Catarina. 
                </p>
 
             </div>
 
             <div class="casa_da_literatura">
 
-               <p>A Casa da Literatura, um belo edifício colonial cuidadosamente restaurado, abriga uma coleção diversificada de artefatos,
-                  manuscritos e livros. O museu também abriga exposições temporárias relacionadas à poesia, literatura e cultura local, 
-                  enriquecendo ainda mais a visita.
+               <p>Sua história remonta aos séculos XVII e XIX, quando Ilhéus, donos de barraquinhas, vendiam uma variedade de 
+                  produtos na praia em frente à atual praça XV de Novembro, que era a entrada da cidade. Nessa época, mascates, 
+                  oleiros, pescadores e colonos da Ilha comercializavam seus produtos, abastecendo navios que seguiam em direção ao 
+                  Rio do Prata e ao oceano Pacífico.
                </p>
             
-            </div>
-
-            <div class="casa_da_literatura" style="overflow: hidden;">
-               <img src="https://estado.sc.gov.br/noticias/wp-content/uploads/sites/3/2022/12/24102022_casa-literatura-cruz-e-sousa_MHM9613.jpg" alt="Casa da literatura" 
-               style="float: left; margin-right: 15px; width: 320px;">
                
                <p>
                   Uma das principais atrações da Casa da Literatura são a vasta coleção de obras de poetas brasileiros e escritores que 
@@ -116,54 +448,100 @@
                   apreciar as palavras que deram vida à imaginação de Cruz e Sousa e inspiraram gerações posteriores.
                </p>
 
-               <div class="casa_da_literatura" style="overflow: hidden;">
                   <p>
-                     Os entusiastas da poesia e da arte também têm a oportunidade de participar de eventos culturais frequentes realizados 
-                     na Casa da Literatura. Sarais, recitais e palestras são organizados regularmente para promover a expressão artística e
-                      honrar o legado de Cruz e Souza, tornando este local uma verdadeira meca para a comunidade literária local e visitantes.
+                     O Mercado Público desempenhava um papel crucial na economia local, conectando a Ilha de Santa Catarina a outras regiões
+                     por meio do comércio marítimo.
                   </p>     
-               </div>
+
 
                <p>
-                  Além de sua rica história literária, a Casa da Literatura Poeta Cruz e Sousa possui uma localização privilegiada, permitindo 
-                  que os visitantes explorem facilmente os arredores encantadores de Florianópolis. Situada no centro histórico da cidade, há uma 
-                  abundância de cafés, restaurantes e lojas pitorescas para descobrir após uma visita inspiradora à casa do poeta.
+                  Na década de 1930, foi inaugurada a ala Sul, destinada à venda de carnes e pescados. O mercado passou por melhorias, incluindo a 
+                  instalação de uma rede de encanamento e três câmaras frigoríficas na mesma década. Antes disso, os peixes eram descartados após 
+                  a manhã, mas com as câmaras frigoríficas, a limitação era reduzida.
                </p>   
             
-               <p style="margin-top: 10px;">
-                  Seja você um amante da poesia ou apenas um curioso viajante, a Casa da Literatura Poeta Cruz e Sousa é um destino 
-                  imperdível em sua visita a Florianópolis-SC.
+               <p>
+                  A construção do aterro da Baía Sul e da Ponte Colombo Salles nos anos 70 alterou o cenário do mercado, permitindo que os alimentos 
+                  chegassem por veículos. Na década de 80, a Associação dos Comerciantes e Varejistas do Mercado Público foi criada, e o prédio foi 
+                  tombado como patrimônio histórico municipal, garantindo sua preservação. O mercado passou por uma reforma significativa na mesma 
+                  década, concluída em 1988, marcando outra fase importante em sua história.
                </p>   
                
             </div>
 
-            <h1 style="margin:20px; text-align: center; margin-top: 100px;">Onde está Localizada?</h1>
+            <h1 style="margin:20px; text-align: center; margin-top: 100px;">Onde está Localizado?</h1>
 
             <div class="maps">
 
                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3535.8651277081517!2d-48.55180602453636!3d-27.597710776245428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9527397c3ac62109%3A0x7405460fbf5ae99a!2sCasa%20da%20Literatura%20Catarinense%20Poeta%20Cruz%20e%20Sousa!5e0!3m2!1spt-BR!2sbr!4v1701002996877!5m2!1spt-BR!2sbr" 
-                  width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                  width="900" height="700" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" >
                </iframe>
 
             </div>
           
         </section>
 
-         <!--==================== POPULAR ====================-->
+
+        <!--==================== POPULAR ====================-->
+        <section>
+
+            <h2 style="text-align: center; margin-top: 120px;">O Olhar dos Alunos Através das Lentes</h2>
+
+            <div class="gallery-container" style="margin-top: 75px">
+
+                <a href="IMG_5836.jpg" class="gallery-items">
+                    <img src="IMG_5836.jpg" alt="">
+                </a>
+                <a href="img2.jpg" class="gallery-items">
+                    <img src="img2.jpg" alt="">
+                </a>
+                <a href="img3.jpg" class="gallery-items">
+                    <img src="img3.jpg" alt="">
+                </a>
+                <a href="img5.jpg" class="gallery-items">
+                    <img src="img5.jpg" alt="">
+                </a>
+                <a href="IMG_9420 (1).jpg" class="gallery-items">
+                    <img src="IMG_9420 (1).jpg" alt="">
+                </a>
+                <a href="20231117_104035 (1).jpg" class="gallery-items">
+                    <img src="20231117_104035 (1).jpg" alt="">
+                </a>
+                <a href="IMG_9424 (1).jpg" class="gallery-items">
+                    <img src="IMG_9424 (1).jpg" alt="">
+                </a>
+                <a href="IMG_9425 (1).jpg" class="gallery-items">
+                    <img src="IMG_9425 (1).jpg" alt="">
+                </a>
+
+            </div>
 
 
-      </main>
+            <h1 style="margin:20px; text-align: center; margin-top: 100px;">Onde está Localizada?</h1>
 
-      <!--==================== FOOTER ====================-->
-      <footer class="footer">
-         <p>&copy: 2023 turma <strong>2&deg;1 Desenvolvimento de Sistemas.</strong> Todos os direitos reservados</p>
-      </footer>
+            <div class="maps">
 
-      <!--=============== SCROLLREVEAL ===============-->
-      <script src="../js/scrollreveal.min.js"></script>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3535.8651277081517!2d-48.55180602453636!3d-27.597710776245428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9527397c3ac62109%3A0x7405460fbf5ae99a!2sCasa%20da%20Literatura%20Catarinense%20Poeta%20Cruz%20e%20Sousa!5e0!3m2!1spt-BR!2sbr!4v1701002996877!5m2!1spt-BR!2sbr"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
 
-      <!--=============== MAIN JS ===============-->
-      <script src="../js/index.js"></script>
+            </div>
 
-   </body>
+        </section>
+
+    </main>
+
+    <p style="text-align: center; margin-top: 120px;">
+        &copy: 2023 turma <strong>2&deg;1 Desenvolvimento de Sistemas.</strong> Todos os direitos reservados</p>
+
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src="../js/scrollreveal.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="../js/index.js"></script>
+
+</body>
+
 </html>
