@@ -701,7 +701,7 @@ video {
 
   .paisagem {
     width: 100%; /* Adjusted width */
-    left: 0; /* Adjusted position */
+    left: 0; /* Adjusted position */  
     text-align: center;
     margin-left: 0; /* Adjusted margin */
     font-size: 1.5rem; /* Adjusted font size */
