@@ -653,6 +653,10 @@ nav{
     margin-top: 2rem; /* Adjusted margin */
   }
 
+  .footer {
+    margin-top: -690px;
+  }
+
   .footer p {
     left: 0; /* Adjusted for mobile */
   }
@@ -797,5 +801,92 @@ nav{
 }
 
 @media screen and (max-width: 300px){
+  @media screen and (max-width: 300px){
+    .home {
+      max-width: 100%;
+    }
   
+    .home_title {
+      position: relative;
+      max-width: 100%;
+      font-size: 30px;
+    }
+  
+    .about_container {
+      margin-top: 70px;
+    }
+    
+    .imagem_home {
+      height: 450px;
+    }
+  
+    .gallery .box-container{
+      #box1 img{
+        min-width: 210px;
+        max-width: 210px;
+        min-height: 210px;
+        max-height: 210px;
+      }
+  
+      #box2 img{
+        min-width: 210px;
+        max-width: 210px;
+        min-height: 210px;
+        max-height: 210px;
+      }
+  
+      #box3 img{
+        min-width: 210px;
+        max-width: 210px;
+        min-height: 210px;
+        max-height: 210px;
+      }
+  
+      #box4 img{
+        min-width: 210px;
+        max-width: 210px;
+        min-height: 210px;
+        max-height: 210px;
+      }
+  
+      #box5 img{
+        min-width: 210px;
+        max-width: 210px;
+        min-height: 210px;
+        max-height: 210px;
+      }
+  
+      #box6 img{
+        min-width: 210px;
+        max-width: 210px;
+        min-height: 210px;
+        max-height: 210px;
+      }
+  
+      #box7 img{
+        min-width: 210px;
+        max-width: 210px;
+        min-height: 210px;
+        max-height: 210px;
+      }
+  
+      #box8 img{
+        min-width: 210px;
+        max-width: 210px;
+        min-height: 210px;
+        max-height: 210px;
+      }
+  
+      #box9 img{
+        min-width: 210px;
+        max-width: 210px;
+        min-height: 210px;
+        max-height: 210px;
+      }
+    }
+  
+    .map {
+      margin-top: -200px;
+    }
+  }
 }
