@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praia da armaçâo</title>
+    <style>
+        
+        .barra_lateral
+        {
+            margin-top: 130px;
+            position: absolute; /*deixa a posicao como absoluta(livre para mexer aonde vocequiser sem restricoes por estar em contato com algo)*/
+            min-height: 100%; /*deixa a altura minima como 100%*/
+            max-width: 30px; /*deixa o tamanho maximo como 30px*/
+            background-color: rgb(255, 255, 255); /*deixa a cor do fundo branca*/
+            background-size: 100%; /*deixa o tamanho do fundo como 100% da area*/
+        }
+
+        .barra_lateral a{
+            color: transparent; /*deixa a cor do a no barra_lateral transparente*/
+        }
+
+        .barra_lateral:hover
+        {
+            min-width: 200px; /*deixa a largura minima como 200px*/
+        }
+
+        .barra_lateral:hover a {
+            color: black; /* deixa a cor do (a) quando o barra_lateral é selecionada como preto */
+            text-decoration: none; /*tira a decoração do texto como o sublinhado*/
+        }
+
+        html
+        {
+            overflow-x: hidden; /*limita o eixo x */
+        }
+
+
+        body
+        {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header
+        {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            z-index: 1000; /*faz se sobrepor aos outros*/
+            position: fixed; /*faz a posição ser fixa nesse local*/
+            width: 100%;
+            top: -5px;
+            margin-top: 0px;
+        }
+
+        .superior
+        {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+            z-index: 1000; /*faz se sobrepor aos outros*/
+            position: fixed; /*faz a posição ser fixa nesse local*/
+            width: 100%;
+            top: 80px;
+            height: 20px;
+        }
+
+        .superior a
+        {
+            color: #fff; 
+            padding: 10px;
+            margin-right: 10px;
+            text-decoration: none; /*tira a decoracao do texto tipo o sublinhado*/
+        }
+
+        .barra_lateral nav ul a:hover
+        {
+            cursor: pointer; /*muda o visual do mouse para maozinha de agarrar*/
+            text-decoration: underline; /*deixa uma decoracao para o texto como linha abaixo*/
+        }
+
+        #inicio:hover
+        {
+            border: 1px solid whitesmoke;
+            border-radius: 30px;
+            border-width: 1px; /*espesura */
+        }
+
+        #casa_da_literatura:hover
+        {
+            border: 1px solid whitesmoke;
+            border-radius: 30px;
+            border-width: 1px; /*espesura */
+        }
+
+        #museu:hover
+        {
+            border: 1px solid whitesmoke;
+            border-radius: 30px;
+            border-width: 1px; /*espesura */
+        }
+
+        #praia:hover
+        {
+            border: 1px solid whitesmoke;
+            border-radius: 30px;
+            border-width: 1px; /*espesura */
+        }
+
+        #mercado_publico:hover
+        {
+            border: 1px solid whitesmoke;
+            border-radius: 30px;
+            border-width: 1px; /*espesura */
+        }
+
+        #florianopolis:hover
+        {
+            border: 1px solid whitesmoke;
+            border-radius: 30px;
+            border-width: 1px; /*espesura */
+        }
+
+        .container
+        {
+            min-width: 800px; /*largura maxima*/
+            width: 80%; 
+            height: 1930px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            left: 150px;
+        }
+
+        .container h2{
+            margin-top: 100px;
+            position: relative;
+            left: 520px; /*distancia em relaçao ao lado esquerdo*/
+        }
+
+        .container .book-section
+        {
+
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            position: absolute;
+            width: 80%; /*distancia entre eles de*/
+            right: 125px; /*dixa um espaço do lado esquerdo*/
+        }
+
+        .container .book
+        {
+            max-width: 300px; /*largura de 45%*/
+            max-height: 430px; /*altura maxima da borda verticalmente*/
+            margin-bottom: 20px;
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 20px; /*tamanho da borda aredondada da parte de traz da imagen do livro*/
+        }
+
+        .mapa
+        {
+            max-width: 600px; /*largura*/
+            max-height: 450px; /*altura maxima da borda verticalmente*/
+            background-color: #eee;
+            margin-top: 1000px;
+            margin-left: 310px;
+            padding: 10px;
+            border-radius: 20px; /*tamanho da borda aredondada da parte de traz da imagen do livro*/
+        }
+
+        .container .introducao
+        {
+            max-width: 800px; /*largura de 45%*/
+            max-height: 400px; /*altura maxima da borda verticalmente*/
+            margin-bottom: 20px;
+            margin-top: 120px;
+            margin-left: 10px;
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 20px; /*tamanho da borda aredondada da parte de traz da imagen do livro*/
+        }
+
+        .container .image-container
+        {
+            display: inline-block;
+            border-radius: 10px; 
+            margin-top: 13px; /*distancia da borda superior da imagen ate a imagen*/
+            margin-left: 15px; /*distancia da borda interna do container em relaçao ao lado esquerdo*/
+            overflow: hidden;
+            height: 400px; /*altura de 780px*/
+            min-width: 100%; /*largura minima de 100%*/
+        }
+
+        .container .rounded-image
+        {
+            display: block;
+            max-width: 90%;
+            height: 400px; /*define o tamnho vertical da imagen*/
+            border-radius: 10px; /* deixa borda redonda */
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Praia da armaçâo</h1>
+    </header>
+
+    <nav class="superior">
+        <a id = "inicio" href="../index.html">inicio</a> 
+        <a id = "casa_da_literatura" href="./casa_literatura.html">Casa da literatura</a>
+        <a id = "museu" href="./museu.html">Museu</a>
+        <a id = "catedral" href="./catedral.html">Catedral</a>
+        <a id = "mercado_publico" href="./mercado_publico.html">Mercado publico</a>
+        <a id = "florianopolis" href="./florianopolis.html">Florianópolis</a>
+    </nav>
+
+    <div class="container">
+       
+        <div class="introducao">
+            <p align-text ="center">A Praia da Armação é uma das praias mais famosas de Florianópolis, no estado de Santa Catarina, Brasil. Localizada no sul da ilha, é conhecida por sua beleza natural, areias claras e mar agitado, ideal para a prática de surf. A região costuma ser movimentada, especialmente durante a alta temporada, oferecendo uma variedade de bares, restaurantes e quiosques à beira-mar, onde os visitantes podem desfrutar da culinária local e de petiscos à base de frutos do mar frescos. Além disso, a Praia da Armação é ponto de partida para passeios de barco até a Ilha do Campeche, uma ilha paradisíaca com águas cristalinas e sítios arqueológicos preservados.</p>
+        </div>
+
+
+        <h2>Fotos da turma</h2>
+
+        <div class="book-section">
+
+            <div class="book">
+            
+                <div class="image-container">
+                    <img class="rounded-image" src="../img/praia/p2.jpg" alt="Descrição da Imagem">
+                    
+                </div>
+
+            </div>
+
+            <div class="book" >
+
+                <div class="image-container">
+                    <img class="rounded-image" src="../img/praia/p3.jpg" alt="Descrição da Imagem">
+                </div>
+
+            </div>
+
+            <div class="book">
+
+                <div class="image-container">
+                    <img class="rounded-image" src="../img/praia/p4.jpg" alt="Descrição da Imagem">
+                </div>           
+
+            </div>
+
+            <div class="book">
+
+                <div class="image-container">
+                    <img class="rounded-image" src="../img/praia/p10.jpg" alt="Descrição da Imagem">
+                </div>           
+
+            </div>
+
+            <div class="book">
+
+                <div class="image-container">
+                    <img class="rounded-image" src="../img/praia/p9.jpg" alt="Descrição da Imagem">
+                </div>           
+
+            </div>
+
+            <div class="book">
+
+                <div class="image-container">
+                    <img class="rounded-image" src="../img/praia/p7.jpg" alt="Descrição da Imagem">
+                </div>           
+                
+            </div>
+            
+        </div>
+
+        <div class="mapa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14125.402570281927!2d-48.51465019466841!3d-27.737328868642813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x952724efe7bbaf8f%3A0x18ec3e4354e58858!2zUHJhaWEgZGEgQXJtYcSvw6Nv!5e0!3m2!1spt-BR!2sbr!4v1701869256023!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>    
+    </div>
+</body>
+</html>
+
+
